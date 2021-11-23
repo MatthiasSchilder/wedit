@@ -21,6 +21,7 @@ namespace wedit
     public partial class WorkflowItem3 : DragItem
     {
         public ProcessorType ProcessorType { get; set; }
+        public event MouseEventHandler ConnectionDrawingStarted;
 
         public bool HasInputConnector
         {
@@ -45,6 +46,24 @@ namespace wedit
         {
             InitializeComponent();
             
+            
         }
+
+
+        protected override System.Windows.Media.HitTestResult HitTestCore(System.Windows.Media.PointHitTestParameters hitTestParameters)
+        {
+            return new PointHitTestResult(this, hitTestParameters.HitPoint);
+        }
+
+
+        //private void WorkflowConnector_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ConnectionDrawingStarted?.Invoke(this, null);
+        //}
+
+        //private void WorkflowConnector_MouseDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    ConnectionDrawingStarted?.Invoke(this, null);
+        //}
     }
 }

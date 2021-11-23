@@ -24,5 +24,15 @@ namespace wedit
         {
             InitializeComponent();
         }
+
+        protected override System.Windows.Media.HitTestResult HitTestCore(System.Windows.Media.PointHitTestParameters hitTestParameters)
+        {
+            return new PointHitTestResult(this, hitTestParameters.HitPoint);
+        }
+
+        private void button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = false;
+        }
     }
 }
