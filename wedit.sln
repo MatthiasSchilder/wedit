@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wedit", "wedit\wedit.csproj", "{DE882FDD-5A67-4992-8AC3-37DE6F2C85DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wedit.TestApp", "wedit.TestApp\wedit.TestApp.csproj", "{8C412A5D-ED34-462B-B39E-9359F6B3F1C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE882FDD-5A67-4992-8AC3-37DE6F2C85DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE882FDD-5A67-4992-8AC3-37DE6F2C85DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE882FDD-5A67-4992-8AC3-37DE6F2C85DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE882FDD-5A67-4992-8AC3-37DE6F2C85DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C412A5D-ED34-462B-B39E-9359F6B3F1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C412A5D-ED34-462B-B39E-9359F6B3F1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C412A5D-ED34-462B-B39E-9359F6B3F1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C412A5D-ED34-462B-B39E-9359F6B3F1C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E745CB8-BF12-46D7-ABA0-0DDB3F1DAA26}
+	EndGlobalSection
+EndGlobal
