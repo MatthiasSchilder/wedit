@@ -18,7 +18,7 @@ namespace wedit
     /// <summary>
     /// Interaction logic for WorkflowItem3.xaml
     /// </summary>
-    public partial class WorkflowItem3 : UserControl
+    public partial class WorkflowItem3 : DragItem
     {
         public ProcessorType ProcessorType { get; set; }
 
