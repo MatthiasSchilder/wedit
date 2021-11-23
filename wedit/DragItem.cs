@@ -18,9 +18,9 @@ namespace wedit
 
         public DragItem()
         {
-            //this.MouseLeftButtonDown += UserControl_MouseLeftButtonDown;
-            //this.MouseLeftButtonUp += UserControl_MouseLeftButtonUp;
-            //this.MouseMove += UserControl_MouseMove;
+            this.MouseLeftButtonDown += UserControl_MouseLeftButtonDown;
+            this.MouseLeftButtonUp += UserControl_MouseLeftButtonUp;
+            this.MouseMove += UserControl_MouseMove;
         }
 
         private void UserControl_MouseLeftButtonDown(Object sender, MouseButtonEventArgs e)

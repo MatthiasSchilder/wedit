@@ -42,6 +42,11 @@ namespace wedit
                 persistConnection = true; ;
             }
             EndConnectionMode(persistConnection);
+
+            
+            
+
+            
         }
 
         private System.Windows.Shapes.Line lastLine;
@@ -86,8 +91,34 @@ namespace wedit
             if (_isConnectionMode)
             {
                 _isConnectionMode = false;
-                if (!persistConnection && lastLine != null)
-                    this.Children.Remove(lastLine);
+
+                if(persistConnection && lastLine != null)
+                {
+                    var deltaX = lastLine.X2 - lastLine.X1;
+                    var deltaY = lastLine.Y2 - lastLine.Y1;
+                    List<Point> points = new List<Point> { new Point(lastLine.X1, lastLine.Y1),
+                    new Point(lastLine.X1 + deltaX / 2, lastLine.Y1),
+                    new Point(lastLine.X1 + deltaX / 2, lastLine.Y2),
+                    new Point(lastLine.X2, lastLine.Y2)};
+                    PolyBezierSegment segment = new PolyBezierSegment(points, false);
+
+                    var bezierSegment = new BezierSegment(
+                        new Point(lastLine.X1 + deltaX / 2, lastLine.Y1),
+                        new Point(lastLine.X1 + deltaX / 2, lastLine.Y2),
+                        new Point(lastLine.X2, lastLine.Y2), true);
+
+                    PathFigure p = new PathFigure(new Point(lastLine.X1, lastLine.Y1), new List<PathSegment>() { bezierSegment }, false);
+                    var pg = new PathGeometry(new List<PathFigure>() { p });
+
+                    var path = new System.Windows.Shapes.Path();
+                    path.Data = pg;
+                    path.Stroke = Brushes.Blue;
+                    path.StrokeThickness = 5;
+                    this.Children.Add(path);
+                }
+
+
+                this.Children.Remove(lastLine);
                 lastLine = null;
             }
         }
