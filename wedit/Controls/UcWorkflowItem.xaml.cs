@@ -20,14 +20,14 @@ namespace wedit
     /// </summary>
     public partial class WorkflowItem3 : DragItem
     {
-        public ProcessorType ProcessorType { get; set; }
+        public WidgetType ProcessorType { get; set; }
         public event MouseEventHandler ConnectionDrawingStarted;
 
         public bool HasInputConnector
         {
             get
             {
-                if (ProcessorType == ProcessorType.InputOnly || ProcessorType == ProcessorType.InputAndOutput)
+                if (ProcessorType == WidgetType.InputOnly || ProcessorType == WidgetType.InputAndOutput)
                     return true;
                 return false;
             }
@@ -36,7 +36,7 @@ namespace wedit
         {
             get
             {
-                if (ProcessorType == ProcessorType.OutputOnly || ProcessorType == ProcessorType.InputAndOutput)
+                if (ProcessorType == WidgetType.OutputOnly || ProcessorType == WidgetType.InputAndOutput)
                     return true;
                 return false;
             }

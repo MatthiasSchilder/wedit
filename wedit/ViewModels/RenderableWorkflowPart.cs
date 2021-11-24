@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wedit
+namespace wedit.ViewModels
 {
-    public enum ProcessorType
+    public class RenderableWorkflowPart
     {
-        InputOnly,
-        OutputOnly,
-        InputAndOutput
     }
 }
