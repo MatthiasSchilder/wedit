@@ -11,9 +11,9 @@
     </Canvas.DataContext>
     <Canvas.Resources>
         <DataTemplate x:Key="ItemDataTemplate">
-            <wedit:WorkflowItem3 Width="{Binding Path=Size.Width}" Height="{Binding Path=Size.Height}"/>
+            <wedit:WorkflowItem3 Tag="{Binding Path=Id}" Width="{Binding Path=Size.Width}" Height="{Binding Path=Size.Height}"/>
         </DataTemplate>
-        <DataTemplate x:Key="ConnectorDataTemplate">
+        <DataTemplate x:Key="ConnectorDataTemplate" >
             <Path x:Name="connectorPath" Stroke="Blue" StrokeThickness="1">
                 <Path.Data>
                     <PathGeometry>
@@ -34,7 +34,7 @@
         </DataTemplate>
         <wedit:PartTemplateSelector x:Key="partDataTemplateSelector" />
     </Canvas.Resources>
-    <ItemsControl ItemsSource="{Binding Path=WorkflowParts}" ItemTemplateSelector="{StaticResource partDataTemplateSelector}">
+    <ItemsControl ItemsSource="{Binding Path=WorkflowParts}" ItemTemplateSelector="{StaticResource partDataTemplateSelector}" >
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                 <Canvas/>

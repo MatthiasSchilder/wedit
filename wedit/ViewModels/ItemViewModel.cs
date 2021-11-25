@@ -21,6 +21,7 @@ namespace wedit.ViewModels
         public bool HasOutputConnector { get; set; }
         public Point? PositionOutputConnector { get; }
 
+        public string Id { get; } = new Guid().ToString();
 
         public ItemViewModel(Point position) : this(position, new Size(160, 90))
         {
@@ -29,6 +30,8 @@ namespace wedit.ViewModels
 
         public ItemViewModel(Point position, Size size)
         {
+            HasInputConnector = true;
+            HasOutputConnector = true;
             Position = position;
             Size = size;
         }

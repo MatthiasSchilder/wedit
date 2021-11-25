@@ -13,21 +13,22 @@ namespace wedit.ViewModels
     {
         public WorkflowModel WorkflowModel { get; }
 
+        private List<RenderableWorkflowPart> _workflowParts = new List<RenderableWorkflowPart>();
         public List<RenderableWorkflowPart> WorkflowParts
         {
             get
             {
-                WorkflowParts.Clear();
+                _workflowParts.Clear();
                 foreach(var widget in WorkflowModel.Widgets)
                 {
-                    WorkflowParts.Add(new ItemViewModel(widget.Position));
+                    _workflowParts.Add(new ItemViewModel(widget.Position));
                 }
 
-                foreach(var connection in WorkflowModel.WidgetConnections)
+                foreach (var connection in WorkflowModel.WidgetConnections)
                 {
 
                 }
-
+                return _workflowParts;
 
             }
         }
@@ -42,10 +43,13 @@ namespace wedit.ViewModels
         private void FillTestWorkflowModel()
         {
             var widgetStart = new Widget("Start", WidgetType.OutputOnly);
+            widgetStart.Position = new Point(100, 100);
             WorkflowModel.Widgets.Add(widgetStart);
             var widgetIntermediate = new Widget("Intermediate", WidgetType.InputAndOutput);
+            widgetIntermediate.Position = new Point(300, 100);
             WorkflowModel.Widgets.Add(widgetIntermediate);
             var widgetTermination = new Widget("Termination", WidgetType.InputOnly);
+            widgetTermination.Position = new Point(300, 300);
             WorkflowModel.Widgets.Add(widgetTermination);
 
             WorkflowModel.WidgetConnections.Add(new Connection(widgetStart, widgetIntermediate));

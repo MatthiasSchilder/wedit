@@ -42,10 +42,40 @@ namespace wedit
             }
         }
 
+        public Point PositionInputConnector
+        {
+            get
+            {
+                ApplyTemplate();
+                var a = (Visual)GetTemplateChild("inboundConnector");
+                var wnd = Application.Current.MainWindow;
+                Point relativePoint = a.TransformToAncestor(wnd)
+                              .Transform(new Point(0, 0));
+
+                return relativePoint;
+                //return out
+            }
+        }
+
+        public Point PositionOutputConnector
+        {
+            get
+            {
+                ApplyTemplate();
+                var a = (Visual) GetTemplateChild("outboundConnector");
+                var wnd = Application.Current.MainWindow;
+                Point relativePoint = a.TransformToAncestor(wnd)
+                              .Transform(new Point(0, 0));
+
+                return relativePoint;
+                //return out
+            }
+        }
+
         public WorkflowItem3()
         {
             InitializeComponent();
-            
+
             
         }
 
@@ -53,6 +83,11 @@ namespace wedit
         protected override System.Windows.Media.HitTestResult HitTestCore(System.Windows.Media.PointHitTestParameters hitTestParameters)
         {
             return new PointHitTestResult(this, hitTestParameters.HitPoint);
+        }
+
+        private void outboundConnector_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(PositionOutputConnector.ToString());
         }
 
 

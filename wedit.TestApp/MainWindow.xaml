@@ -7,13 +7,13 @@
         xmlns:wedit="clr-namespace:wedit;assembly=wedit" xmlns:views="clr-namespace:wedit.Views;assembly=wedit"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <!--<wedit:WorkflowCanvas Background="White">
+    <wedit:WorkflowCanvas Background="White">
         <wedit:WorkflowItem3 Width="160" Height="90" Canvas.Top="100" Canvas.Left="100" Content="Termination" ProcessorType="InputOnly"></wedit:WorkflowItem3>
         <wedit:WorkflowItem3 Width="160" Height="90" Canvas.Top="200" Canvas.Left="375" Content="Intermediate" ProcessorType="InputAndOutput"></wedit:WorkflowItem3>
         <wedit:WorkflowItem3 Width="160" Height="90" Canvas.Top="300" Canvas.Left="138" Content="Start" ProcessorType="OutputOnly"></wedit:WorkflowItem3>
         <wedit:WorkflowConnector Width="50" Height="50" Canvas.Top="100" Canvas.Left="400"  />
-        --><!--<wedit:WorkflowItem2></wedit:WorkflowItem2>--><!--
-    </wedit:WorkflowCanvas>-->
-    <views:WorkflowCanvas2></views:WorkflowCanvas2>
+
+    </wedit:WorkflowCanvas>
+    <!--<views:WorkflowCanvas2></views:WorkflowCanvas2>-->
 
 </Window>

@@ -10,9 +10,7 @@ namespace wedit.ViewModels
 {
     public class ConnectorViewModel : RenderableWorkflowPart
     {
-        public Point P1 { get; set; }
-        public Point P2 { get; set; }
-        public Point P3 { get; set; }
-        public Point P4 { get; set; }
+        public string IdFrom { get; set; }
+        public string IdTo { get; set; }
     }
 }
