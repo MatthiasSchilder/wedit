@@ -18,9 +18,9 @@ namespace wedit.Views
     /// <summary>
     /// Interaction logic for WorkflowCanvas2.xaml
     /// </summary>
-    public partial class WorkflowCanvas2 : Canvas
+    public partial class WorkflowEditor : ItemsControl
     {
-        public WorkflowCanvas2()
+        public WorkflowEditor()
         {
             InitializeComponent();
         }
